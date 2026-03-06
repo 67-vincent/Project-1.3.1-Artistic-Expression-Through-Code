@@ -104,7 +104,7 @@ def update_leaderboard(file_name, leader_names, leader_scores,  player_name, pla
 def draw_leaderboard(high_scorer, leader_names, leader_scores, turtle_object, player_score):
   
   # clear the screen and move turtle object to (-200, 100) to start drawing the leaderboard
-  font_setup = ("Arial", 20, "normal")
+  font_setup = ("Arial", 20, "bold")
   turtle_object.clear()
   turtle_object.penup()
   turtle_object.goto(-160,100)
@@ -113,6 +113,7 @@ def draw_leaderboard(high_scorer, leader_names, leader_scores, turtle_object, pl
 
   # loop through the lists and use the same index to display the corresponding name and score, separated by a tab space '\t'
   for index in range(len(leader_names)):
+    turtle_object.color("purple")
     turtle_object.write(str(index + 1) + "\t" + leader_names[index] + "\t" + str(leader_scores[index]), font=font_setup)
     turtle_object.penup()
     turtle_object.goto(-160,int(turtle_object.ycor())-50)
